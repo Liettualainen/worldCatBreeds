@@ -1,15 +1,54 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
-    <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
+    <script src="https://unpkg.com/slim-select@latest/dist/slimselect.min.js"></script>
+    <link href="https://unpkg.com/slim-select@latest/dist/slimselect.css" rel="stylesheet">
+    </link>
+
+    <title>Lovely_Cats</title>
+
+   
+      <style>
+     .divblock {
+         display: inline-flex;
+         flex-direction: row;
+     }  
+      .loader {
+    width: 68px;
+    height: 68px;
+    border: 5px solid #f0dd37;
+    border-bottom-color: #FF3D00;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 5% ;
+    top: 1%;
+
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+      </style>
   </head>
   <body>
-    <h1>Example title</h1>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+    <select id="slimSelect" class="breed-select" style="width: 250px; font-size: 20px; display: none; ">
+    <!-- <option value="start" style="color:red;">Find you cat below</option> -->
+    </select>
+
+    <p class="loader"></p>
+
+    <div class="cat-info" style="margin-top: 20px; width: 250px; font-size: 20px; display: none; "></div>
+
+    <script src="js/index.js" type="module"></script>
   </body>
 </html>
